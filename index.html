@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/style.css">
+    <title>TO DO LIST</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="header-item title">
+                <h1>TO DO LIST - V360</h1>
+            </div>
+            <div class="header-item">
+                <button type="submit" class="form-button">
+                    <i class="fa-solid fa-circle-plus"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <section id="action">
+        <div class="cards">
+            <div class="to-do" id="to_do" dropzone="move">
+                <h1>TO DO</h1>
+                <div class="tasks" id="to_do_tasks"></div>
+            </div>
+            <div class="to-do" id="in_progress" dropzone="move">
+                <h1>IN PROGRESS</h1>
+                <div class="tasks" id="in_progress_tasks"></div>
+            </div>
+            <div class="to-do" id="done" dropzone="move">
+                <h1>DONE</h1>
+                <div class="tasks" id="done_tasks"></div>
+            </div>
+        </div>
+    </section>
+    <div id="submitTaskModal" class="card-task modal-task">
+        <div class="modal-content-task">
+            <form id="submitTaskForm" action="" class="to-do-form">
+                <div class="modal-item-task">
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-item-task">
+                    <input type="text" name="description" placeholder="Escreva sua tarefa aqui" required>
+                </div>
+                <div class="form-controls modal-item-task">
+                    <select name="priority" required>
+                        <option value="">Prioridade</option>
+                        <option value="alta">alta</option>
+                        <option value="média">média</option>
+                        <option value="baixa">baixa</option>
+                    </select>
+                    <input type="date" name="deadline">
+                    <button type="submit" class="form-button">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </button>
+                </div>
+            </form>  
+        </div>
+    </div>
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <form id="editTaskForm">
+                <div class="modal-item">
+                    <label for="editDescription">Descrição:</label>
+                    <input type="text" id="editDescription" name="editDescription">
+                </div>
+                <div class="modal-item">
+                    <label for="editPriority">Prioridade:</label>
+                    <select id="editPriority" name="editPriority">
+                        <option value="">Selecione a prioridade</option>
+                        <option value="Alta">alta</option>
+                        <option value="Média">média</option>
+                        <option value="Baixa">baixa</option>
+                    </select>
+                </div>
+                <div class="modal-item">
+                    <label for="editDeadline">Prazo:</label>
+                    <input type="date" id="editDeadline" name="editDeadline">
+                </div>
+                <div class="modal-item buttons">
+                    <button type="submit" class="save">Salvar</button>
+                    <span class="close">&times;</span>
+                </div>
+            </form>
+        </div>
+    </div>
+<script src="src/javascript/javascript.js"></script>
+</body>
+</html>

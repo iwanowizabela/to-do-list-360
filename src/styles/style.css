@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background-color: #330033;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius:  5px;
+    height: 20vh;
+}
+
+.title{
+    margin-right: 50px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #FF700A;
+    text-align: center;
+    width: 100%;
+}
+
+#action {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.card-task {
+    padding: 18px;
+    border-radius: 10px;
+    margin: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+#to_do, #in_progress, #done {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #FF700A;
+    padding: 18px;
+    border-radius: 10px;
+    width: 45vh;
+    min-height: 40vh;
+    margin: 5px 0px 5px 0px;
+}
+
+#to_do h1, #in_progress h1, #done h1 {
+    color: #f3f3f3;
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.to-do-form input {
+    background-color: transparent;
+    border: none;
+    color: #330033;
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid #FF700A;
+}
+
+.to-do-form input:focus-visible {
+    outline: none;
+}
+
+.to-do-form input::placeholder{
+    color: #330033;
+}
+
+.to-do-form .form-button{
+    border: none;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: transparent;
+    border-radius: none;
+    font-size: 20px;
+    color: #FF700A;
+    transition: scale 0.5s ease;
+}
+
+.header .form-button{
+    border: none;
+    min-height: 50px;
+    min-width: 50px;
+    background-color: transparent;
+    border-radius: none;
+    font-size: 32px;
+    color: #FF700A;
+    transition: scale 0.7s ease;
+}
+
+.to-do-form .form-button:hover {
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.header .form-button:hover {
+    cursor: pointer;
+    scale: 1.2;
+    color: #d9dadb ;
+}
+
+
+.to-do-form input[type="text"] {
+    background-color: transparent;
+    border: none;
+    color: #330033;
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 2px solid #FF700A;
+    margin-bottom: 10px; 
+}
+
+.to-do-form .form-controls {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.to-do-form select, .to-do-form input[type="date"] {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    color: #330033;
+    font-size: 16px;
+    padding: 5px;
+    border-bottom: 2px solid #FF700A;
+    cursor: pointer;
+}
+
+.to-do-form select {
+    appearance: none;
+    background-color: transparent; 
+    color: #330033; 
+    border: none; 
+    padding: 5px; 
+    outline: none;
+    border-bottom: 2px solid #FF700A;
+    cursor: pointer;
+}
+
+.to-do-form select:focus {
+    background-color: #330033; 
+    outline: none;
+    border-bottom: 2px solid #2C1A55; 
+    color: #d9dadb;
+}
+
+.to-do-form input[type="date"] {
+    padding: 5px;
+}
+
+#tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #2C1A55;
+    background-color: #f3f3f3;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 5px 0px 5px 0px;
+}
+
+.task .status {
+    margin-right: 10px;
+}
+
+.task .task-description {
+    font-size: 16px;
+    color: #2C1A55;
+    padding: 4px 0px;
+    width: 100%;
+    text-decoration: underline;
+}
+
+.task .task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button{
+    font-size: 16px;
+}
+
+.action-button{
+    color: #6c9bbc;
+    transition: scale 0.5s ease;
+}
+
+.delete-button:hover, .edit-button:hover{
+    color: #330033;
+    cursor: pointer;
+    scale: 1.1;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-task {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 40vh;
+    height: 40vh;
+    border-radius: 5px;
+}
+
+.modal-content-task {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 50vh;
+    min-height: 20vh;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-item-task{
+    margin: 5px 0px 5px 0px;
+}
+
+.card-task .form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#editTaskForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.modal-item {
+    margin: 5px 0px 5px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.save {
+    border-radius: 10px;
+    background-color: #330033;
+    color: #d9dadb;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 70%;
+    margin-right: 50px;
+}
+
+.save:hover,
+.save:focus {
+    background-color: green;
+    border: green;
+    color: #d9dadb;   
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 600px) {
+    .card-task {
+        flex-wrap: wrap;
+        min-width: 40vh;
+        min-height: 30vh;
+    }
+
+    .modal-content {
+       width: 40vh;
+       min-height: 50vh;
+    }
+
+    .modal-content-task {
+        width: 40vh;
+        min-height: 50vh;
+     }
+
+    .modal-item-task{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+}
